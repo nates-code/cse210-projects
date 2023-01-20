@@ -20,9 +20,13 @@ class Program
         Job2.Display();
 
 
-        // Resume resume = new Resume();
-        // resume.jobs
+        Resume myResume = new Resume();
+        myResume._name = "Nathan";
 
+        myResume._jobs.Add(job1);
+        myResume._jobs.Add(job2);
+        
+        myResume.Display();
 
     }
 }
