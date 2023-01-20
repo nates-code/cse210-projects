@@ -4,6 +4,25 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning02 World!");
+        Job job1 = new Job();
+        job1._company = "Apple";
+        job1._jobTitle = "Head Engineer";
+        job1._startYear = 2020;
+        job1._endYear = 2080;
+        job1.Display();
+        
+        
+        Job Job2 = new Job();
+        Job2._company = "Microsoft";
+        Job2._jobTitle = "Head Engineer";
+        Job2._startYear = 2007;
+        Job2._endYear = 2023;
+        Job2.Display();
+
+
+        // Resume resume = new Resume();
+        // resume.jobs
+
+
     }
 }
