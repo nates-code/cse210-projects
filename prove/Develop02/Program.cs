@@ -4,6 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
+        public string _fileLocation;
+        
+
+
+        public void LoadFile();
+
+        public void SaveFile(public void MenuSelect);
+
+        public void CreateNewJournal();
+        
     }
 }
