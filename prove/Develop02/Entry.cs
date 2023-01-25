@@ -1,4 +1,5 @@
 using System;
+// using DateTime;
 
 public class Entry
 {
@@ -7,18 +8,25 @@ public class Entry
     public string _response;
 
 
-    public Entry(Promts);
-
-
-    public string GetResponse();
+    public Entry(string prompt)    
     {
-        Console.WriteLine(_prompt);
-        string _entry = Console.ReadLine();
+        _prompt = prompt;
+        GetResponse();
+        SetDate();
+        
     }
 
-    public void GetDate();
-    {
 
+    public void GetResponse()
+    {
+        Console.WriteLine(_prompt);
+        _response = Console.ReadLine();
+
+    }
+
+    public void SetDate()
+    {
+        _date = DateTime.Today.ToString();
     }
 }
 

@@ -2,17 +2,27 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
-    {
-        public string _fileLocation;
+
+    public string _fileLocation;
+
+    static void Main(string[] args) {
         
+    
+        var journal = new Journal();
+        journal.CreateEntry();
+    
 
+        // public void LoadFile()
+        // {
+        // }
 
-        public void LoadFile();
+        // public void SaveFile(public void MenuSelect)
+        // {
+        // }
 
-        public void SaveFile(public void MenuSelect);
+        // public void CreateNewJournal()  
+        // {
+        // }
 
-        public void CreateNewJournal();
-        
     }
 }
