@@ -16,6 +16,9 @@ public class Entry
         
     }
 
+    public Entry()
+    {
+    }
 
     public void GetResponse()
     {

@@ -3,17 +3,19 @@ using System;
 class Program
 {
 
-    public string _fileLocation;
+    // public string fileLocation;
 
     static void Main(string[] args) {
         
     
-        var journal = new Journal();
+        Journal journal = new Journal();
         journal.CreateEntry();
+        journal.DisplayEntries();
     
 
         // public void LoadFile()
         // {
+
         // }
 
         // public void SaveFile(public void MenuSelect)
@@ -22,6 +24,7 @@ class Program
 
         // public void CreateNewJournal()  
         // {
+            void newjournal =  
         // }
 
     }
