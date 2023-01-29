@@ -1,10 +1,13 @@
 using System;
-// using DateTime;
+// using Newtonsoft.Json;
 
 public class Entry
 {
+    // [JsonProperty("date")]
     public string _date;
+    // [JsonProperty("prompt")]
     public string _prompt;
+    // [JsonProperty("response")]
     public string _response;
 
 
@@ -16,6 +19,12 @@ public class Entry
         
     }
 
+    public Entry(string date, string prompt, string response)
+    {
+        _date = date;
+        _prompt = prompt;
+        _response = response;
+    }
     public Entry()
     {
     }

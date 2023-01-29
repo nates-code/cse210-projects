@@ -2,6 +2,7 @@ using System;
 using System.Text.Json;
 using System.IO;
 
+
 class Program
 {
 
@@ -73,8 +74,8 @@ class Program
             
             System.Console.WriteLine(json);
             var data = JsonSerializer.Deserialize<List<Entry>>(json)!;
-            System.Console.WriteLine(data);
             journal._entries = data;
+            
         }
 
         void SaveFile(Journal journal)
