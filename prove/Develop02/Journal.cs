@@ -30,13 +30,16 @@ public class Journal
 
     public void DisplayEntries()
     {
-        Entry response = new Entry();
+        // Entry response = new Entry();
         
         // _entries.Add(response);
 
         foreach (var item in _entries)
         {
             System.Console.WriteLine(item._date);
+            System.Console.WriteLine(item._prompt);
+            System.Console.WriteLine(item._response);
+            System.Console.WriteLine();
         }
     }
 

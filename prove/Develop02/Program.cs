@@ -1,12 +1,15 @@
 using System;
+using System.Text.Json;
+using System.IO;
 
 class Program
 {
 
-    // public string fileLocation;
-
     static void Main(string[] args) {
-        
+
+
+        Journal journal = new Journal();
+
         var userChoice = "";
 
         while (userChoice != "5")
@@ -18,7 +21,6 @@ class Program
             System.Console.WriteLine("4. Save");
             System.Console.WriteLine("5. Quit");
             System.Console.Write("What would you like to do? ");
-            //int userChoice = int.Prarse(Console.ReadLine())
             userChoice = Console.ReadLine();
 
             if(int.TryParse(userChoice, out int choice))
@@ -26,27 +28,30 @@ class Program
                 switch (choice)
                 {
                     case 1:
-                        System.Console.WriteLine("1");
 
-                        Journal journal = new Journal();
                         journal.CreateEntry();
-                        journal.DisplayEntries();
-
+                    
                         break; 
                     case 2:
                         System.Console.WriteLine("2");
+
+                        journal.DisplayEntries();
+
                         break; 
                     case 3:
-                        System.Console.WriteLine("3");
+
+                        LoadFile(journal);
+                        journal.DisplayEntries();
+
                         break; 
                     case 4:
-                        System.Console.WriteLine("4");
+
+                        SaveFile(journal);
+                        System.Console.WriteLine("File saved. ");
+
                         break; 
-                    case 5:            
-                        System.Console.WriteLine("5");
-                        break; 
+                    
                     default:
-                        System.Console.WriteLine("Defa");
                         userChoice = "5";
                         break;
                 }
@@ -57,23 +62,33 @@ class Program
             }
             
         }
+        // To exceed requirements Save or load your document to a database or use a different library or format such as JSON for storage.
 
-        
-    
+        void LoadFile(Journal journal)
+        {
+            System.Console.WriteLine("What is the file name? ");
+            var fileName = Console.ReadLine();
 
-        // public void LoadFile()
-        // {
+            string json = File.ReadAllText(fileName);
+            
+            System.Console.WriteLine(json);
+            var data = JsonSerializer.Deserialize<List<Entry>>(json)!;
+            System.Console.WriteLine(data);
+            journal._entries = data;
+        }
 
-        // }
+        void SaveFile(Journal journal)
+        {
+            System.Console.WriteLine("What is the file name? ");
+            var fileName = Console.ReadLine();
 
-        // public void SaveFile(public void MenuSelect)
-        // {
-        // }
+            var options = new JsonSerializerOptions { IncludeFields = true };
 
-        // public void CreateNewJournal()  
-        // {
-            // void newjournal =  
-        // }
+            var json = JsonSerializer.Serialize(journal._entries, options);
+            File.WriteAllText(fileName, json);
+
+            
+        }
 
     }
 }
