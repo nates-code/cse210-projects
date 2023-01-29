@@ -3,31 +3,36 @@ using System;
 
 public class Entry
 {
-    // [JsonProperty("date")]
+    // [JsonPropertyName("Date")]
     public string _date;
-    // [JsonProperty("prompt")]
+    // [JsonPropertyName("Prompt")]
     public string _prompt;
-    // [JsonProperty("response")]
+    // [JsonPropertyName("Response")]
     public string _response;
 
 
-    public Entry(string prompt)    
-    {
-        _prompt = prompt;
-        GetResponse();
-        SetDate();
+    // public Entry(string prompt)    
+    // {
+    //     _prompt = prompt;
+    //     GetResponse();
+    //     SetDate();
         
+    // }
+
+    public Entry(string _date, string _prompt, string _response)
+    {
+       SetData( _date,  _prompt,  _response);
     }
 
-    public Entry(string date, string prompt, string response)
+    public void SetData(string d, string p, string r)
     {
-        _date = date;
-        _prompt = prompt;
-        _response = response;
+        _date = d;
+        _prompt = p;
+        _response = r;
     }
-    public Entry()
-    {
-    }
+    // public Entry()
+    // {
+    // }
 
     public void GetResponse()
     {

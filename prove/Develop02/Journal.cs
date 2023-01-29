@@ -45,7 +45,9 @@ public class Journal
         int index = random.Next(_prompts.Count);
         string prompt = _prompts[index];
         
-        Entry entry = new Entry(prompt);
+        Entry entry = new Entry(null, prompt, null);
+        entry.GetResponse();
+        entry.SetDate();
         _entries.Add(entry);
         
     }

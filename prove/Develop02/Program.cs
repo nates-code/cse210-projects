@@ -73,7 +73,8 @@ class Program
             string json = File.ReadAllText(fileName);
             
             System.Console.WriteLine(json);
-            var data = JsonSerializer.Deserialize<List<Entry>>(json)!;
+            var options = new JsonSerializerOptions { IncludeFields = true };
+            var data = JsonSerializer.Deserialize<List<Entry>>(json, options)!;
             journal._entries = data;
             
         }
