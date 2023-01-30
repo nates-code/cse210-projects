@@ -14,7 +14,8 @@ class Program
         var userChoice = "";
 
         while (userChoice != "5")
-        {
+        {   
+            System.Console.WriteLine();
             System.Console.WriteLine("Please select one of the following choices: ");
             System.Console.WriteLine("1. Write");
             System.Console.WriteLine("2. Display");
@@ -34,7 +35,6 @@ class Program
                     
                         break; 
                     case 2:
-                        System.Console.WriteLine("2");
 
                         journal.DisplayEntries();
 
@@ -69,6 +69,7 @@ class Program
         {
             System.Console.WriteLine("What is the file name? ");
             var fileName = Console.ReadLine();
+            System.Console.WriteLine();
 
             string json = File.ReadAllText(fileName);
             
