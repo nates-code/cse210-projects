@@ -24,5 +24,7 @@ class Fraction
     }
 
 
+    public 
+
 
 }
