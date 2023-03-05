@@ -30,7 +30,7 @@ public class Word
     {
 
     }
-    public void SetHidden(bool_hidden)
+    public void SetHidden(bool hidden)
     {
 
     }
@@ -38,9 +38,18 @@ public class Word
     {
         
     }
-    public void MakeUnderline()
+    public string ToDisplayString()
     {
-        
+        char hideChar = '_';
+        if (_hidden == true)
+        {
+            // Team helped with this line of code. 
+            return new string(hideChar, _word.Length);
+        }
+        return _word;
+
+
+
     }
    
 }
